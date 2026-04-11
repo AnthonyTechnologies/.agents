@@ -61,7 +61,13 @@
 **CRITICAL**: Load references strictly on a need-to-know basis. Do NOT load preemptively unless instructed.
 
 ### Languages
+* C: @./languages/c.md
+* C#: @./languages/c#.md
+* C++: @./languages/cpp.md
+* Java: @./languages/java.md
+* JavaScript: @./languages/javascript.md
 * Python: @./languages/python.md
+* Rust: @./languages/rust.md
 
 ### Agents
 * Aider: @./agents/aider.md

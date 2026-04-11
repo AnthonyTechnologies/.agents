@@ -6,26 +6,27 @@ of agent guidelines and conventions.
 
 ## Purpose and Scope
 
-- Centralizes agent configuration and guidance so it's easy to maintain and evolve in one place.
-- Encourages consistent behaviors across projects (e.g., logging, the same coding style rules, and repeatable task workflows).
-- Serves as a lightweight reference for new contributors who use AI coding agents for development.
+- Centralize agent configuration and guidance to facilitate maintenance and evolution in one place.
+- Encourage consistent behaviors across projects (e.g., logging, identical coding style rules, and repeatable task workflows).
+- Serve as a lightweight reference for new contributors who use AI coding agents for development.
 
 ## Design Principles
 
-The design principles of this repository are based on the [AGENTS.md Standard](https://www.agents.md) and AI coding
-agent concepts outlined by the HumanLayer team (presented by Dexter Horthy). 
+The design principles of this repository are based on the [AGENTS.md Standard](https://www.agents.md) and AI coding agent concepts
+outlined by the HumanLayer team (presented by Dexter Horthy). 
 
 The `AGENTS.md` standard is designed to ensure safe, predictable agent-human collaboration, prevent context exhaustion,
 and support long-term project stability. 
 
-In the agent concepts outlined by the HumanLayer team, they discuss context window management, human alignment, and
-the importance of predictability. They developed the QRSPI (Questions, Research, Structure Outline, Worktree, Plan,
-Implement, Pull Request) framework: an evolved 8-stage structured workflow for AI coding agents that replaces the
-earlier RPI (Research-Plan-Implement) model. It divides tasks into distinct alignment and execution phases, guaranteeing
-human review at critical junctures before execution to effectively manage instruction budgets and context.
+The agent concepts outlined by the HumanLayer team discuss context window management, human alignment, and the
+importance of predictability. The QRSPI (Questions, Research, Structure Outline, Worktree, Plan, Implement, Pull
+Request) framework developed by this team provides an evolved 8-stage structured workflow for AI coding agents that
+replaces the earlier RPI (Research-Plan-Implement) model. The QRSPI framework divides tasks into distinct alignment and
+execution phases, guaranteeing human review at critical junctures before execution to effectively manage instruction
+budgets and context.
 
-The `AGENTS.md` files of this repository additionally include workflow control logic, so task frameworks can be selected
-based on the user needs at any given moment.
+The `AGENTS.md` files of this repository additionally include workflow control logic, so task frameworks may be selected
+based on user needs at any given moment.
 
 The directives are organized into 6 core sections that actively enforce these ideals:
 
@@ -48,13 +49,22 @@ The directives are organized into 6 core sections that actively enforce these id
 
 ## Usage
 
-- Option A (recommended): Add this repository as a Git submodule and point the project root `AGENTS.md` to the submodule `AGENTS.md` with `@./.agents/AGENTS.md`.
-- Option B: Copy this submodule into the target project.
-- Option C: Keep this repository separate and reference it during tasks; ensure the agent has access to the `AGENTS.md` file and related materials.
+**Option A** (recommended): Add this repository as a Git submodule.
+  1. Run the following command in the root of the project:
+  ```bash
+  git submodule add https://github.com/AnthonyTechnologies/.agents.git .agents
+  ```
+  2. Either configure the agent to reference the `./.agents/AGENTS.md` or point the project root `AGENTS.md` to the submodule `AGENTS.md` with `@./.agents/AGENTS.md`.
+
+**Option B**: Copy this submodule into the target project.
+
+**Option C**: Keep this repository separate and reference it during tasks; ensure the agent has access to the `AGENTS.md` file and related materials.
+
+*(Note: Update any paths in `AGENTS.md` and sub-directives to correctly reference other resources.)*
 
 ## Tips 
 
-The core guidance lives in `AGENTS.md`. Here are practical tips for applying it day‑to‑day:
+The core guidance resides in `AGENTS.md`. Apply the following practical tips day‑to‑day:
 - **QRSPI Framework**: Title requests with "QRSPI" to use the QRSPI framework.
 - **Clean Workspace**: Use `intermediates/` for scratch files and `artifacts/` for long-term reports to maintain organization and avoid token drift.
 - **Clear Biases**: Periodically delete or move `intermediates/` and `artifacts/` to avoid biased or unintended results.
@@ -64,7 +74,7 @@ The core guidance lives in `AGENTS.md`. Here are practical tips for applying it 
 
 ## Contributing
 
-If you wish to heavily customize these directives for your own organization or projects, we highly encourage you to **fork this repository**. For general improvements, typo fixes, or new widely applicable patterns, pull requests with suggestions are welcome!
+Fork this repository to heavily customize these directives for specific organizations or projects. Submit pull requests with suggestions for general improvements, typo fixes, or new widely applicable patterns.
 
 ## Links
 
