@@ -2,5 +2,7 @@
 
 ## 1. Style Guide
 *Strictly adhere to the coding standards based on the domain modifying.*
-* Primary Style Guide: Always and immediately load @../../python-styleguide/style_guide_summary.md
-* Project Structure: @../../python-styleguide/project_structure.md
+* [Style Guide](../../docs/python-styleguide/style_guide_summary.md): Always and immediately load
+
+## 2. Reliability & Compaction
+* **Test Command Compaction**: **CRITICAL** Always redirect all testing run commands as files and read those files.

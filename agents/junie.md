@@ -18,5 +18,5 @@
 
 ## 3. Reliability & Compaction
 * **File Reading**: Use targeted tools (`open` with line numbers, `search_project`) over full file reads.
-* **Output Verification**: Read large redirected files using `Get-Content -TotalCount 20`.
+* **Output Verification**: Read large redirected files using `Get-Content -TotalCount 20`. Change to Junie Tool `open` when reading more than 100 lines.
 * **Detached Processes**: Explicitly list all background tasks in the subsequent `update_status`.

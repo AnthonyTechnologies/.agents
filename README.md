@@ -13,10 +13,10 @@ of agent guidelines and conventions.
 ## Design Principles
 
 The design principles of this repository are based on the [AGENTS.md Standard](https://www.agents.md) and AI coding agent concepts
-outlined by the HumanLayer team (presented by Dexter Horthy). 
+outlined by the HumanLayer team (presented by Dexter Horthy).
 
 The `AGENTS.md` standard is designed to ensure safe, predictable agent-human collaboration, prevent context exhaustion,
-and support long-term project stability. 
+and support long-term project stability.
 
 The agent concepts outlined by the HumanLayer team discuss context window management, human alignment, and the
 importance of predictability. The QRSPI (Questions, Research, Structure Outline, Worktree, Plan, Implement, Pull
@@ -31,8 +31,8 @@ based on user needs at any given moment.
 The directives are organized into 6 core sections that actively enforce these ideals:
 
 - **Core Mandates**: Establishes safety, predictability, and human alignment rules to prevent destructive actions and secure the codebase's long-term integrity.
-- **Context Window Management**: Employs recursive summarization and output compaction to mitigate "token drift," maintaining agent accuracy and stability across extensive workflows.
 - **Resource Management**: Organizes the workspace by separating ephemeral files from long-term artifacts, reducing project clutter and context noise over time.
+- **Context Window Management**: Employs recursive summarization and output compaction to mitigate "token drift," maintaining agent accuracy and stability across extensive workflows.
 - **Workflow**: Provides standard execution paths and task structures, preventing erratic behavior and ensuring predictable, stable project evolution.
 - **QRSPI Architecture Framework**: Mandates a sequential protocol with mandatory human checkpoints, securing long-term architectural alignment and preventing scope drift during major tasks.
 - **External Directives**: Dynamically loads specialized rules only when necessary, keeping the baseline context minimal to preserve long-term operational stability.
@@ -54,7 +54,7 @@ The directives are organized into 6 core sections that actively enforce these id
   ```bash
   git submodule add https://github.com/AnthonyTechnologies/.agents.git .agents
   ```
-  2. Either configure the agent to reference the `./.agents/AGENTS.md` or point the project root `AGENTS.md` to the submodule `AGENTS.md` with `@./.agents/AGENTS.md`.
+  2. Either configure the agent to reference the `./.agents/AGENTS.md` or point the project root `AGENTS.md` to the submodule `AGENTS.md` with `[./.agents/AGENTS.md](./.agents/AGENTS.md)`.
 
 **Option B**: Copy this submodule into the target project.
 
@@ -62,7 +62,7 @@ The directives are organized into 6 core sections that actively enforce these id
 
 *(Note: Update any paths in `AGENTS.md` and sub-directives to correctly reference other resources.)*
 
-## Tips 
+## Tips
 
 The core guidance resides in `AGENTS.md`. Apply the following practical tips day‑to‑day:
 - **QRSPI Framework**: Title requests with "QRSPI" to use the QRSPI framework.
