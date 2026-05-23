@@ -1,23 +1,10 @@
 ---
 name: agent-claude-code
-description: Use when working in Claude Code. Covers native tool priority (Glob over find/ls, Grep over grep/rg, Read over cat/head/tail, Edit over sed/awk), command management (scoped commands, error recovery), and resource/context limits (output volume, minimal edits).
+description: Use when working in Claude Code. Provides a file navigation pattern not covered by default behavior; use Glob to discover relevant files before committing to reads, keeping subsequent reads targeted rather than loading full files blindly.
 ---
 
-# Claude Code Agent Directives
+# Claude Code Workflow Patterns
 
-## 1. Native Tool Priority
-*Use Claude Code's built-in tools rather than raw shell equivalents.*
-* **File Search**: Use `Glob` (not `ls` or `find`) for finding files by name pattern.
-* **Content Search**: Use `Grep` (not `grep` or `rg`) for searching file contents.
-* **File Reading**: Use `Read` with `offset`/`limit` parameters (not `cat`, `head`, or `tail`) to paginate large files.
-* **File Editing**: Use `Edit` for targeted changes (not `sed`, `awk`, or `patch`). Use `Write` only for new files or full rewrites.
-* **Destructive Operations**: Require user confirmation or dry-runs for broad shell commands.
-
-## 2. Command Management
-*Execute and monitor shell commands in controlled, observable increments.*
-* **Command Scoping**: Issue small, explicitly scoped commands and analyze `stdout` sequentially.
-* **Error Recovery**: Read specific traceback lines via the `Read` tool (with `offset` targeting the relevant line range) before patching.
-
-## 3. Resource & Context Limits
-* **Output Volume**: Use `Read` with `limit` to prevent output from exceeding 50–100 lines for large files.
-* **File Edits**: Prefer the `Edit` tool for targeted, minimal changes over overwriting entire files.
+## 1. Targeted File Navigation
+*Discover before you read — identify the relevant files first, then read only what you need.*
+* **Glob → Read**: Use `Glob` with a specific pattern to identify relevant files before committing to reads. Once you know what exists, prefer targeted extraction (e.g. `Grep` with `head_limit`) over loading full files.
