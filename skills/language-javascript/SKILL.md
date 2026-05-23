@@ -1,6 +1,6 @@
 ---
 name: language-javascript
-description: Use when writing or modifying JavaScript code. Immediately loads the primary JavaScript style guide and project structure conventions before making any changes.
+description: Use when writing or modifying JavaScript code (.js, .mjs, Node, NodeJS). Immediately loads the primary JavaScript style guide and project structure conventions before making any changes.
 ---
 
 # JavaScript

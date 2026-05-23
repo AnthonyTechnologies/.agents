@@ -1,6 +1,6 @@
 ---
 name: language-cpp
-description: Use when writing or modifying C++ code. Immediately loads the C++ style guide and project structure conventions before making any changes.
+description: Use when writing or modifying C++ code (.cpp, .cc, .cxx, .hpp, C++). Immediately loads the C++ style guide and project structure conventions before making any changes.
 ---
 
 # C++

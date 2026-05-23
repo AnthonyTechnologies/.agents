@@ -1,6 +1,6 @@
 ---
 name: language-java
-description: Use when writing or modifying Java code. Immediately loads the Java style guide and project structure conventions before making any changes.
+description: Use when writing or modifying Java code (.java, Maven, Gradle, Spring). Immediately loads the Java style guide and project structure conventions before making any changes.
 ---
 
 # Java

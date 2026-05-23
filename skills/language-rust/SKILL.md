@@ -1,6 +1,6 @@
 ---
 name: language-rust
-description: Use when writing or modifying Rust code. Immediately loads the Rust style guide and project structure conventions before making any changes.
+description: Use when writing or modifying Rust code (.rs, cargo, crate). Immediately loads the Rust style guide and project structure conventions before making any changes.
 ---
 
 # Rust

@@ -1,6 +1,6 @@
 ---
 name: language-python
-description: Use when writing or modifying Python code. Immediately loads the Python style guide. CRITICAL: always redirect test run commands to files and read those files rather than printing raw output.
+description: Use when writing or modifying Python code (.py, pytest, pip, uv). Immediately loads the Python style guide and enforces critical test command compaction (always redirect test output to files).
 ---
 
 # Python
