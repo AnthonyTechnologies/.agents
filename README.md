@@ -57,21 +57,44 @@ Skills are on-demand instructions for agents stored in `skills/` as described on
 <[https://agentskills.io](https://agentskills.io)>. The skills in this repository are for providing agents additional,
 domain-specific context beyond what is in `AGENTS.md` to prevent context rot. 
 
-- `agent-skills`: Provide additional context for specific agents.
-- `lanuage-skills`: Provide additional context for programming languages.
+- `agent-[name]`: Provide additional context for specific agents.
+- `lanuage-[name]`: Provide additional context for programming languages.
 
-## Repository Installation and Usage
+## Repository Installation
 
-**Option A** (recommended): Add this repository as a Git submodule.
-  1. Run the following command in the root of the project:
-  ```bash
-  git submodule add https://github.com/AnthonyTechnologies/.agents.git .agents
-  ```
-  2. Either configure the agent to reference the `./.agents/AGENTS.md` or point the project root `AGENTS.md` to the submodule `AGENTS.md` with `[./.agents/AGENTS.md](./.agents/AGENTS.md)`.
-
+**Option A** (recommended): Add this repository as a Git submodule. Run the following command in the root of the project:
+    
+```bash
+git submodule add https://github.com/AnthonyTechnologies/.agents.git .agents
+```
+  
 **Option B**: Copy this submodule into the target project.
 
 **Option C**: Keep this repository separate and reference it during tasks; ensure the agent has access to the `AGENTS.md` file and related materials.
+
+### Setup
+
+1. Pull a copy of this repository locally, from the previous options.
+
+
+2. Either configure the agent to reference the `./.agents/AGENTS.md` or point the project root's agent README (e.g. `AGENTS.md`, `CLAUDE.md`) to the submodule `AGENTS.md`.
+   * `AGENTS.md`: `[More AGENTS Directives](./.agents/AGENTS.md)`.
+   * `CLAUDE.md`: `@./.agents/AGENTS.md`.
+
+
+3. If using Claude, its project configurations are located in the `.cluade/` directory of the project root. There are two ways to manage this:
+   * **Global**: Skills can be copied into the global claude configurations, typically in the `~/.cluade/` directory.
+   * **Project**: A "symbolic link" can be used to redirect `.cluade/` to `.agents/` directory. However, this approach may not be supported by all systems or configurations. Also, it is suggested to git ignore the `.cluade/` directory to avoid conflicts in git.
+
+**Linux & macOS**
+```bash
+ln -s .agents .cluade 
+```
+
+**Windows**:
+```cmd
+mklink /D .cluade .agents
+```
 
 ## Tips
 
@@ -90,11 +113,10 @@ with suggestions for general improvements, typo fixes, or new widely applicable 
 ## Links
 
 - AGENTS.md documentation hub: https://www.agents.md
+- Skills documentation hub: https://agentskills.io
 - QRSPI Architecture Framework Keynote (Main Resource): https://www.youtube.com/watch?v=YwZR6tc7qYg
 
 ## License
 
-Distributed under the terms of the [MIT License][license].
-
-[license]: https://github.com/{{cookiecutter.github_user}}/{{cookiecutter.project_name}}/blob/main/LICENSE
+Distributed under the terms of the [MIT License](LICENSE).
 
